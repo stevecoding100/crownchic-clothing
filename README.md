@@ -1,4 +1,4 @@
-#CrownChic
+##CrownChic
 
 Welcome to CrownChic, an elegant clothing e-commerce platform designed to bring a touch of royalty to your wardrobe. This repository contains the source code for the CrownChic web application, built with React.js, Node.js, Express, and integrated with Google Authentication and Stripe for seamless payments. The styling is done using CSS.
 
