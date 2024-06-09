@@ -19,7 +19,7 @@ const Navigation = () => {
                     <Link className="nav-link" to="/contact">
                         CONTACT
                     </Link>
-                    <Link className="nav-link" to="/sigin">
+                    <Link className="nav-link" to="/signin">
                         SIGN IN
                     </Link>
                     <RiShoppingBagLine className="nav-link-cart" size={28} />
