@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 
+import FormInput from "../form-input/FormInput";
+import Button from "../button/Button";
+
 import {
     signInWithGooglePopup,
     createUserDocumentFromAuth,
     signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 
-import FormInput from "../form-input/FormInput";
-
 import "./sign-in-form.styles.scss";
-
-import Button from "../button/Button";
 
 const defaultFormFields = {
     email: "",
@@ -26,22 +25,19 @@ const SignInForm = () => {
     };
 
     const signInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
         try {
-            const response = await signInAuthUserWithEmailAndPassword(
-                email,
-                password
-            );
+            await signInAuthUserWithEmailAndPassword(email, password);
             resetFormFields();
         } catch (error) {
             switch (error.code) {
-                case "auth/wrong-password":
-                    alert("Incorrect password for email");
+                case "auth/invalid-credential":
+                    alert("Incorrect password or email. Please try again.");
                     break;
                 case "auth/user-not-found":
                     alert("No user associated with this email");
@@ -86,7 +82,7 @@ const SignInForm = () => {
                         buttonType="google"
                         onClick={signInWithGoogle}
                     >
-                        Google sign in
+                        Sign in with Google
                     </Button>
                 </div>
             </form>
