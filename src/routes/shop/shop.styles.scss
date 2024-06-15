@@ -1,0 +1,27 @@
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 50px;
+    padding: 12px;
+}
+
+
+/* Media query for screens smaller than 768px */
+
+@media (max-width: 768px) {
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Change to 2 columns */
+    }
+}
+
+
+/* Media query for screens smaller than 480px */
+
+@media (max-width: 480px) {
+    .products-container {
+        grid-template-columns: 1fr;
+        /* Change to 1 column */
+    }
+}
