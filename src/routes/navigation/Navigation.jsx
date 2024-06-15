@@ -2,8 +2,12 @@ import React from "react";
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
-import { RiShoppingBagLine } from "react-icons/ri";
+// import { RiShoppingBagLine } from "react-icons/ri";
+import CartIcon from "../../components/cart-icon/CartIcon";
+import CartDropdown from "../../components/cart-dropdown/CartDropdown";
+
 import { UserContext } from "../../context/user.context";
+import { CartContext } from "../../context/cart.context";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
@@ -11,6 +15,7 @@ import "./navigation.styles.scss";
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
+    const { isCartOpen } = useContext(CartContext);
 
     return (
         <Fragment>
@@ -34,9 +39,9 @@ const Navigation = () => {
                             SIGN IN
                         </Link>
                     )}
-
-                    <RiShoppingBagLine className="nav-link-cart" size={28} />
+                    <CartIcon />
                 </div>
+                {isCartOpen && <CartDropdown />}
             </div>
             <Outlet />
         </Fragment>
