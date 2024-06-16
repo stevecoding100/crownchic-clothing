@@ -5,22 +5,34 @@
     row-gap: 50px;
 }
 
+h2 {
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
 
 /* Media query for screens smaller than 768px */
 
 @media (max-width: 768px) {
+    h2 {
+        padding: 10px;
+    }
     .products-container {
         grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
         /* Change to 2 columns */
     }
 }
 
-
 /* Media query for screens smaller than 480px */
 
 @media (max-width: 480px) {
+    h2 {
+        padding: 10px;
+    }
     .products-container {
         grid-template-columns: 1fr;
+        padding: 10px;
         /* Change to 1 column */
     }
 }
