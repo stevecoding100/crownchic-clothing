@@ -1,11 +1,14 @@
-.product-card-container {
+import styled from "styled-components";
+
+export const ProductCartContainer = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 335px;
+    height: 350px;
     align-items: center;
     position: relative;
-    margin: 20px 0;
+    margin: 2rem 0;
+
     img {
         width: 100%;
         height: 95%;
@@ -13,45 +16,27 @@
         margin-bottom: 5px;
         border-radius: 5px;
     }
+
     button {
         width: 80%;
         opacity: 0.7;
         position: absolute;
         top: 255px;
         display: none;
-        font-weight: 600;
-        border-radius: 5px;
     }
+
     &:hover {
         img {
             opacity: 0.8;
         }
+
         button {
             opacity: 0.85;
             display: flex;
         }
     }
-    .footer {
-        width: 100%;
-        height: 5%;
-        display: flex;
-        justify-content: space-between;
-        font-size: 18px;
-        font-weight: 600;
-        .name {
-            width: 90%;
-            margin-bottom: 15px;
-        }
-        .price {
-            width: 14%;
-        }
-    }
-}
 
-/* Mobile */
-
-@media (max-width: 768px) {
-    .product-card-container {
+    @media (max-width: 768px) {
         height: 270px;
         img {
             height: 100%;
@@ -60,17 +45,42 @@
             top: 200px;
             width: 50%;
         }
+    }
+`;
+
+export const Footer = styled.div`
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    @media (max-width: 768px) {
         .footer {
             font-size: 14px;
             flex-direction: column;
             align-items: flex-start;
-            .name {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            .price {
-                width: 100%;
-            }
         }
     }
-}
+`;
+
+export const Name = styled.span`
+    width: 90%;
+    margin-bottom: 15px;
+
+    @media (max-width: 768px) {
+        .name {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+`;
+
+export const Price = styled.span`
+    width: 10%;
+
+    @media (max-width: 768px) {
+        .price {
+            width: 100%;
+        }
+    }
+`;

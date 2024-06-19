@@ -32,6 +32,7 @@ export const NavLinks = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    width: 100%;
 
     @media (max-width: 600px) {
         width: 80%;
