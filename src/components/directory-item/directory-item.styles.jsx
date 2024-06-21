@@ -56,10 +56,11 @@ export const Body = styled.div`
 
 export const DirectoryItemContainer = styled.div`
 
- min-width: 30%;
+    min-width: 30%;
     height: 240px;
     flex: 1 1 auto;
     display: flex;
+    border-radius: 5px;
     align-items: center;
     justify-content: center;
     border: 1px solid black;

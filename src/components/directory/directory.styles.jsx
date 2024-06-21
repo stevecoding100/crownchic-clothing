@@ -7,7 +7,7 @@ export const DirectoryContainer = styled.div`
     justify-content: space-between;
     gap: 20px;
     @media screen and (max-width: 1024px) {
-        gap: 15px; /* Adjust gap for medium-sized screens */
+        gap: 15px;
     }
 
     @media screen and (max-width: 768px) {
