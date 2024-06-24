@@ -1,14 +1,13 @@
-// Import necessary functions from firebase SDKs
 import { initializeApp } from "firebase/app";
 import {
-    getAuth, // for authentication services
+    getAuth,
     // signInWithRedirect,
-    signInWithPopup, // for signing in with a popup window
-    GoogleAuthProvider, // to enable google as an auth provider
-    createUserWithEmailAndPassword, // to create users with email/password
-    signInWithEmailAndPassword, // to sign in users with email/password
-    signOut, // to sign out users
-    onAuthStateChanged, // to listen for auth state changes
+    signInWithPopup,
+    GoogleAuthProvider,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
 } from "firebase/auth";
 
 import {

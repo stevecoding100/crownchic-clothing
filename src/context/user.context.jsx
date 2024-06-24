@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import {
     onAuthStateChangedListener,
     createUserDocumentFromAuth,
@@ -10,13 +10,36 @@ export const UserContext = createContext({
     currentUser: null,
 });
 
+export const USER_ACTION_TYPES = {
+    SET_CURRENT_USER: "SET_CURRENT_USER",
+};
+const INITIAL_STATE = {
+    currentUser: null,
+};
+const userReducer = (state, action) => {
+    const { type, payload } = action;
+
+    switch (type) {
+        case USER_ACTION_TYPES.SET_CURRENT_USER:
+            return {
+                ...state,
+                currentUser: payload,
+            };
+        default:
+            throw new Error(`Unhandled type ${type} in userReducer`);
+    }
+};
+
 // Create a provider component
 export const UserProvider = ({ children }) => {
-    // State to hold the current user
-    const [currentUser, setCurrentUser] = useState(null);
+    const [{ currentUser }, dispatch] = useReducer(userReducer, INITIAL_STATE);
 
-    // Value to be provided to consuming components
-    const value = { currentUser, setCurrentUser };
+    const setCurrentUser = (user) => {
+        dispatch({
+            type: USER_ACTION_TYPES.SET_CURRENT_USER,
+            payload: user,
+        });
+    };
 
     // Effect to listen for authentication state changes
     useEffect(() => {
@@ -33,6 +56,9 @@ export const UserProvider = ({ children }) => {
         // Cleanup the subscription when the components unmounts
         return unsubscribe;
     }, []);
+
+    // Value to be provided to consuming components
+    const value = { currentUser, setCurrentUser };
 
     // Provide the current user context to children components
     return (

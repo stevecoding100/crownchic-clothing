@@ -1,6 +1,6 @@
 import React from "react";
 import { Fragment, useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 // import { RiShoppingBagLine } from "react-icons/ri";
 import CartIcon from "../../components/cart-icon/CartIcon";
@@ -20,6 +20,8 @@ import {
 
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
+
+    console.log("From the navigation: ", currentUser);
     const { isCartOpen } = useContext(CartContext);
 
     return (
