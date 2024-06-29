@@ -1,4 +1,5 @@
 import { createContext, useState, useReducer } from "react";
+import { createAction } from "../utils/reducer/reducer.utils";
 
 const addCartItem = (cartItems, productToAdd) => {
     // Find if cartItems contains productToAdd
@@ -103,10 +104,7 @@ export const CartProvider = ({ children }) => {
             cartTotal: newCartTotal,
         };
 
-        dispatch({
-            type: CART_ACTION_TYPES.SET_CART_ITEMS,
-            payload,
-        });
+        dispatch(createAction(CART_ACTION_TYPES.SET_CART_ITEMS, payload));
     };
 
     const addItemToCart = (productToAdd) => {
