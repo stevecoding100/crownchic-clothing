@@ -21,7 +21,6 @@ import {
 const Navigation = () => {
     const { currentUser } = useContext(UserContext);
 
-    console.log("From the navigation: ", currentUser);
     const { isCartOpen } = useContext(CartContext);
 
     return (
