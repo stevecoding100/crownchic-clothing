@@ -18,6 +18,7 @@ export const Body = styled.div`
     border: 1px solid black;
     background-color: white;
     opacity: 0.7;
+    border-radius: 4px;
     position: absolute;
 
     h2 {

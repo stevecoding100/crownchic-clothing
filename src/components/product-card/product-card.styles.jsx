@@ -18,7 +18,7 @@ export const ProductCartContainer = styled.div`
     }
 
     button {
-        width: 80%;
+        width: 50%;
         opacity: 0.7;
         position: absolute;
         top: 255px;
@@ -38,49 +38,42 @@ export const ProductCartContainer = styled.div`
 
     @media (max-width: 768px) {
         height: 270px;
+
         img {
             height: 100%;
         }
         button {
             top: 200px;
-            width: 50%;
+            font-size: 12px;
         }
     }
 `;
 
 export const Footer = styled.div`
     width: 100%;
-    height: 5%;
+    height: 0;
     display: flex;
     justify-content: space-between;
     font-size: 18px;
-    @media (max-width: 768px) {
-        .footer {
-            font-size: 14px;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    }
 `;
 
 export const Name = styled.span`
     width: 90%;
     margin-bottom: 15px;
-
+    font-size: 16px;
     @media (max-width: 768px) {
-        .name {
-            width: 100%;
-            margin-bottom: 10px;
-        }
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 14px;
     }
 `;
 
 export const Price = styled.span`
-    width: 10%;
+    width: 15%;
+    font-size: 20px;
 
     @media (max-width: 768px) {
-        .price {
-            width: 100%;
-        }
+        width: 25%;
+        font-size: 16px;
     }
 `;
