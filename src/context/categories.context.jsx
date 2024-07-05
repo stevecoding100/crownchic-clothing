@@ -1,35 +1,35 @@
-import { createContext, useEffect, useState } from "react";
+// import { createContext, useEffect, useState } from "react";
 
-import {
-    // addCollectionAndDocuments,
-    getCategoriesAndDocuments,
-} from "../utils/firebase/firebase.utils.js";
+// import {
+//     // addCollectionAndDocuments,
+//     getCategoriesAndDocuments,
+// } from "../utils/firebase/firebase.utils.js";
 
-// Create a Context for the user
-export const CategoriesContext = createContext({
-    categoriesMap: {},
-});
+// // Create a Context for the user
+// export const CategoriesContext = createContext({
+//     categoriesMap: {},
+// });
 
-export const CategoriesProvider = ({ children }) => {
-    const [categoriesMap, setCategoriesMap] = useState({});
+// export const CategoriesProvider = ({ children }) => {
+//     const [categoriesMap, setCategoriesMap] = useState({});
 
-    useEffect(() => {
-        const getCategoriesMap = async () => {
-            const categoryMap = await getCategoriesAndDocuments();
-            setCategoriesMap(categoryMap);
-        };
+//     useEffect(() => {
+//         const getCategoriesMap = async () => {
+//             const categoryMap = await getCategoriesAndDocuments();
+//             setCategoriesMap(categoryMap);
+//         };
 
-        getCategoriesMap();
-    }, []);
+//         getCategoriesMap();
+//     }, []);
 
-    // useEffect(() => {
-    //     addCollectionAndDocuments("categories", SHOP_DATA);
-    // }, []);
+//     // useEffect(() => {
+//     //     addCollectionAndDocuments("categories", SHOP_DATA);
+//     // }, []);
 
-    const value = { categoriesMap };
-    return (
-        <CategoriesContext.Provider value={value}>
-            {children}
-        </CategoriesContext.Provider>
-    );
-};
+//     const value = { categoriesMap };
+//     return (
+//         <CategoriesContext.Provider value={value}>
+//             {children}
+//         </CategoriesContext.Provider>
+//     );
+// };
